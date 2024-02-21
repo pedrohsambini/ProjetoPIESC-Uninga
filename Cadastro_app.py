@@ -32,6 +32,7 @@ class CadastroApp:
         # Definindo uma fonte comum para os rótulos e entradas
         self.fonte = ("Helvetica", 12)
 
+        #Criação da Interface Grafica
         self.label_nome = tk.Label(self.root, text="Nome:", font=self.fonte, bg="#f0f0f0")
         self.label_nome.grid(row=0, column=0, padx=10, pady=5, sticky="w")
         self.entry_nome = tk.Entry(self.root, width=50, font=self.fonte)
@@ -79,7 +80,7 @@ class CadastroApp:
         self.button_pesquisar = tk.Button(self.root, text="Pesquisar Cadastro", command=self.pesquisar_cadastro, font=self.fonte)
         self.button_pesquisar.grid(row=9, column=0, columnspan=2, padx=10, pady=10, sticky="we")
 
-
+#Essa Função Adiciona um cadastro
     def add_cadastro(self):
         nome = self.entry_nome.get()
         data_nascimento = self.entry_data_nascimento.get()
@@ -103,6 +104,7 @@ class CadastroApp:
         else:
             messagebox.showerror("Erro", "Preencha todos os campos obrigatórios!")
 
+    #Função que Exibe os cadastros do Banco de dados
     def mostrar_cadastros(self):
         self.mostrar_window = tk.Toplevel(self.root)
         self.mostrar_window.title("Cadastros")
@@ -121,6 +123,7 @@ class CadastroApp:
         for cadastro in self.cadastros:
             self.listbox.insert(tk.END, cadastro)
 
+    #Função para Editar o cadastro selecionado
     def editar_cadastro(self):
         selection = self.listbox.curselection()
         if selection:
@@ -177,6 +180,7 @@ class CadastroApp:
         else:
             messagebox.showerror("Erro", "Nenhum cadastro selecionado para edição.")
 
+    #Função que atualiza o cadastro
     def atualizar_cadastro(self, cadastro_id):
         nome = self.entry_nome.get()
         data_nascimento = self.entry_data_nascimento.get()
@@ -197,6 +201,7 @@ class CadastroApp:
         else:
             messagebox.showerror("Erro", "Preencha todos os campos obrigatórios!")
 
+    #Função para excluir o cadastro
     def excluir_cadastro_selecionado(self):
         selection = self.listbox.curselection()
         if selection:
@@ -210,6 +215,7 @@ class CadastroApp:
         else:
             messagebox.showerror("Erro", "Nenhum cadastro selecionado para exclusão.")
 
+    #Função para pesquisar o cadastro
     def pesquisar_cadastro(self):
         pesquisa = simpledialog.askstring("Pesquisar Cadastro", "Digite o nome para pesquisar:")
         if pesquisa:
