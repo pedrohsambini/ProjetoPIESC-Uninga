@@ -1,7 +1,7 @@
 # ProjetoPIESC-Uninga
 Sistema de Cadastro de Alunos
 
-Introdução
+Introdução: 
 Esta documentação descreve o funcionamento e a estrutura do sistema de cadastro implementado em Python utilizando a biblioteca Tkinter para interface gráfica e SQLite para armazenamento de dados. O sistema permite adicionar, exibir, editar e excluir cadastros de indivíduos.
 Requisitos do Sistema
 •	Python 3.x instalado no ambiente.
